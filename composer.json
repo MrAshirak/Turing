@@ -1,12 +1,16 @@
 {
-    "name": "vcd94xt10z/zion2",
+    "name": "MrAshirak/Turing",
     "description": "Framework Zion PHP",
     "type": "library",
     "license": "MIT",
     "authors": [{
         "name": "Vinicius Cesar Dias",
         "email": "dias.viniciuscesar@gmail.com"
-    }],
+    },{
+        "name": "MrAshirak",
+        "email": ""
+    }
+    ],
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
