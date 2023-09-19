@@ -1,5 +1,5 @@
 {
-    "name": "MrAshirak/Turing",
+    "name": "mrashirak/turing",
     "description": "Framework Zion PHP",
     "type": "library",
     "license": "MIT",
@@ -7,8 +7,8 @@
         "name": "Vinicius Cesar Dias",
         "email": "dias.viniciuscesar@gmail.com"
     },{
-        "name": "MrAshirak",
-        "email": ""
+       "name": "MrAshirak",
+        "email": "email@email.com"
     }
     ],
     "minimum-stability": "dev",
