@@ -48,7 +48,7 @@ class FileCache2 extends CacheInterface {
             return null;
         }
         
-        @include($file);
+        @include_once($file);
         return isset($value) ? $value : null;
     }
 

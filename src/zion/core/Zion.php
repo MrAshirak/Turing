@@ -108,7 +108,7 @@ class Zion {
         ));
         
         if(strpos($_SERVER["REQUEST_URI"],"/zion/doc/") === 0){
-            require(\zion\ROOT."docs/index.html");
+            require_once(\zion\ROOT."docs/index.html");
             exit();
         }
         
@@ -195,7 +195,7 @@ class Zion {
             System::set("module",$module);
             
             if(file_exists($classFile)) {
-                require($classFile);
+                require_once($classFile);
                 $ctrl = new $classNameNS();
                 
                 $methodName = "rest";
@@ -218,7 +218,7 @@ class Zion {
                 $module = preg_replace("[^a-z0-9\_]", "", strtolower($uri[3]));
                 $file = \zion\ROOT."modules/".$module."/index.php";
                 if(file_exists($file)){
-                    require($file);
+                    require_once($file);
                     exit();
                 }
             }
@@ -258,7 +258,7 @@ class Zion {
                 $classFile   = \zion\ROOT."modules/".$module."/controller/".$className.".class.php";
                 
                 if(file_exists($classFile)){
-                    require($classFile);
+                    require_once($classFile);
                     $ctrl = new $classNameNS();
                     
                     $methodName = "action".ucfirst($action);

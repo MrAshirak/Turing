@@ -44,7 +44,7 @@ class System {
 		ini_set('display_startup_errors', 1);
 
 		// funções
-		require(\zion\ROOT."functions.php");
+		require_once(\zion\ROOT."functions.php");
 
 		// configuração do arquivo
 		$config = zion_get_config_all();

@@ -4,14 +4,15 @@
     "type": "library",
     "license": "MIT",
     "authors": [{
-        "name": "Vinicius Cesar Dias",
-        "email": "dias.viniciuscesar@gmail.com"
-    },{
-       "name": "MrAshirak",
-        "email": "email@email.com"
+      "name": "Vinicius Cesar Dias",
+      "email": "dias.viniciuscesar@gmail.com",
+			"role":"Developer"  			
     }
-    ],
-    "minimum-stability": "dev",
+		,{
+      "name": "MrAshirak",
+			"email": "email@email.com",
+			"role":"Developer"  			
+    }],
     "autoload": {
         "psr-4": {
              "zion\\": "src/zion/"
@@ -24,5 +25,6 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^10.0"
-    }
+    },
+	  "minimum-stability": "dev"
 }
