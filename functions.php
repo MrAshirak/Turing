@@ -8,20 +8,20 @@
  * Lê a configuração dos arquivos
  * @return []
  */
-function zion_get_config_all(){
+function zionGetConfigAll(){
     $all = [];
     
     // configuração básica
     $json = zion_get_config("config.json",false);
     $json = is_array($json)?$json:array();
-    foreach($json AS $key => $value){
+    foreach($json as $key => $value){
         $all[$key] = $value;
     }
     
     // configuração do ambiente
     $json = zion_get_config(\zion\ENV.".json",false);
     $json = is_array($json)?$json:array();
-    foreach($json AS $key => $value){
+    foreach($json as $key => $value){
         $all[$key] = $value;
     }
     
@@ -54,15 +54,15 @@ function zion_get_config($filename,$stopOnError=true){
     return $json;
 }
 
-function zion_escape_dbval($val){
+function zionEscapeDbval($val){
     return addslashes($val);
 }
 
-function php5_count($arg){
+function php5Count($arg){
     if(is_array($arg)){
         return count($arg);
     }else{
         return 0;
     }
 }
-?>
+

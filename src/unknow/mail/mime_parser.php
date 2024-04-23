@@ -14,13 +14,11 @@ define('MIME_PARSER_BODY_START',   5);
 define('MIME_PARSER_BODY_DATA',    6);
 define('MIME_PARSER_BODY_DONE',    7);
 define('MIME_PARSER_END',          8);
-
 define('MIME_MESSAGE_START',            1);
 define('MIME_MESSAGE_GET_HEADER_NAME',  2);
 define('MIME_MESSAGE_GET_HEADER_VALUE', 3);
 define('MIME_MESSAGE_GET_BODY',         4);
 define('MIME_MESSAGE_GET_BODY_PART',    5);
-
 define('MIME_ADDRESS_START',            1);
 define('MIME_ADDRESS_FIRST',            2);
 
@@ -55,7 +53,7 @@ define('MIME_ADDRESS_FIRST',            2);
 {/metadocument}
 */
 
-class mime_parser_class
+class mimeParserClass
 {
 /*
 {metadocument}
@@ -82,7 +80,7 @@ class mime_parser_class
 	</variable>
 {/metadocument}
 */
-	var $error='';
+	private $error='';
 
 /*
 {metadocument}
@@ -99,7 +97,7 @@ class mime_parser_class
 	</variable>
 {/metadocument}
 */
-	var $error_position = -1;
+	private	$error_position = -1;
 
 /*
 {metadocument}
@@ -121,7 +119,7 @@ class mime_parser_class
 	</variable>
 {/metadocument}
 */
-	var $mbox = 0;
+	private $mbox = 0;
 
 /*
 {metadocument}
@@ -138,7 +136,7 @@ class mime_parser_class
 	</variable>
 {/metadocument}
 */
-	var $decode_headers = 1;
+	private $decode_headers = 1;
 
 /*
 {metadocument}
@@ -155,7 +153,7 @@ class mime_parser_class
 	</variable>
 {/metadocument}
 */
-	var $decode_bodies = 1;
+	private $decode_bodies = 1;
 
 /*
 {metadocument}
@@ -182,7 +180,7 @@ class mime_parser_class
 	</variable>
 {/metadocument}
 */
-	var $extract_addresses = 1;
+	private $extract_addresses = 1;
 
 /*
 {metadocument}
@@ -210,7 +208,7 @@ class mime_parser_class
 	</variable>
 {/metadocument}
 */
-	var $address_headers = array(
+	private $address_headers = [
 		'from:' => 1,
 		'to:' => 1,
 		'cc:' => 1,
@@ -218,7 +216,7 @@ class mime_parser_class
 		'return-path:'=>1,
 		'reply-to:'=>1,
 		'disposition-notification-to:'=>1
-	);
+	];
 
 /*
 {metadocument}
@@ -234,7 +232,7 @@ class mime_parser_class
 	</variable>
 {/metadocument}
 */
-	var $message_buffer_length = 8000;
+	private $message_buffer_length = 8000;
 
 /*
 {metadocument}
@@ -256,7 +254,7 @@ class mime_parser_class
 	</variable>
 {/metadocument}
 */
-	var $ignore_syntax_errors=1;
+	private $ignore_syntax_errors=1;
 
 /*
 {metadocument}
@@ -277,7 +275,7 @@ class mime_parser_class
 	</variable>
 {/metadocument}
 */
-	var $warnings=array();
+	private $warnings=array();
 
 /*
 {metadocument}
@@ -295,7 +293,7 @@ class mime_parser_class
 	</variable>
 {/metadocument}
 */
-	var $track_lines = 0;
+	private $track_lines = 0;
 	
 /*
 {metadocument}
@@ -313,7 +311,7 @@ class mime_parser_class
 	</variable>
 {/metadocument}
 */
-	var $use_part_file_names = 0;
+	private	$use_part_file_names = 0;
 
 /*
 {metadocument}
@@ -338,33 +336,33 @@ class mime_parser_class
 	</variable>
 {/metadocument}
 */
-	var $custom_mime_types = array();
+	private $custom_mime_types = array();
 
 	/* Private variables */
-	var $state = MIME_PARSER_START;
-	var $buffer = '';
-	var $buffer_position = 0;
-	var $offset = 0;
-	var $parts = array();
-	var $part_position = 0;
-	var $headers = array();
-	var $body_parser;
-	var $body_parser_state = MIME_PARSER_BODY_DONE;
-	var $body_buffer = '';
-	var $body_buffer_position = 0;
-	var $body_offset = 0;
-	var $current_header = '';
-	var $file;
-	var $body_file;
-	var $position = 0;
-	var $body_part_number = 1;
-	var $next_token = '';
-	var $lines = array();
-	var $line_offset = 0;
-	var $last_line = 1;
-	var $last_carriage_return = 0;
-	var $header_name_characters = '!"#$%&\'()*+,-./0123456789;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}';
-	var $message_position = 0;
+	$state = MIME_PARSER_START;
+	$buffer = '';
+	$buffer_position = 0;
+	$offset = 0;
+	$parts = array();
+	$part_position = 0;
+	$headers = array();
+	$body_parser;
+	$body_parser_state = MIME_PARSER_BODY_DONE;
+	$body_buffer = '';
+	$body_buffer_position = 0;
+	$body_offset = 0;
+	$current_header = '';
+	$file;
+	$body_file;
+	$position = 0;
+	$body_part_number = 1;
+	$next_token = '';
+	$lines = array();
+	$line_offset = 0;
+	$last_line = 1;
+	$last_carriage_return = 0;
+	$header_name_characters = '!"#$%&\'()*+,-./0123456789;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}';
+	$message_position = 0;
 
 	/* Private functions */
 

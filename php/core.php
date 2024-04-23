@@ -1,8 +1,8 @@
 <?php
 namespace {
     class OAuth {}
-    class ntlm_sasl_client_class {}
-    class mime_parser_class {}
+    class ntlmSaslClientClass {}
+    class mimeParserClass {}
 }
 
 namespace League\OAuth2\Client\Grant {
@@ -22,7 +22,7 @@ namespace Psr\Log {
 }
 
 namespace League\OAuth2\Client\Provider {
-    class Google {}    
+    class Google {} 
 }
 
 namespace Hayageek\OAuth2\Client\Provider {
@@ -32,4 +32,4 @@ namespace Hayageek\OAuth2\Client\Provider {
 namespace Stevenmaguire\OAuth2\Client\Provider {
     class Microsoft {}
 }
-?>
+
